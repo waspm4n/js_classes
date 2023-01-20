@@ -1,4 +1,4 @@
-  /* var myname="john"
+/*var myname="john"
    myname="mamba"
    console.log(myname)
    let myName="john";
@@ -206,4 +206,32 @@ const nizBezNizova = nizSaNizovima.reduce(
 
 },[])
 console.log(nizSaNizovima);
-console.log(`Niz nakon reduce metode`,nizBezNizova); */
+console.log(`Niz nakon reduce metode`,nizBezNizova);*/
+
+//Suma clanova u nizu sa reduce metodom
+const arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+sum = arr.reduce(function (a, b) {
+  return a + b;
+}, 0);
+console.log(sum);
+// max value u nizu
+max = arr.reduce(function (prev, curr) {
+  if (prev === null || prev < curr) {
+    return curr;
+  }
+  return prev;
+}, null);
+console.log(max);
+// min value u nizu
+min = arr.reduce(function (prev, curr) {
+  if (prev === null || prev > curr) {
+    return curr;
+  }
+  return prev;
+}, null);
+console.log(min);
+srednjaVrednost = arr.reduce (function (prev, curr) {
+return prev + curr / arr.length;
+},0);
+console.log("niz",arr,"duzina niza",arr.length,"suma niza",sum)
+console.log(srednjaVrednost);
