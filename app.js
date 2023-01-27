@@ -206,7 +206,7 @@ const nizBezNizova = nizSaNizovima.reduce(
 
 },[])
 console.log(nizSaNizovima);
-console.log(`Niz nakon reduce metode`,nizBezNizova);*/
+console.log(`Niz nakon reduce metode`,nizBezNizova);
 
 //Suma clanova u nizu sa reduce metodom
 const arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
@@ -234,4 +234,20 @@ srednjaVrednost = arr.reduce (function (prev, curr) {
 return prev + curr / arr.length;
 },0);
 console.log("niz",arr,"duzina niza",arr.length,"suma niza",sum)
-console.log(srednjaVrednost);
+console.log(srednjaVrednost); 
+*/
+let niz = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,20,30,35,40,45,50,52,54,56,58,60,61,63,65,67,69,70,75,80,82,84,86,88,90,91,93,95,97,99,100];
+let names = ["Wick", "Luffy", "Sparrow", "Morgan", "James", "Future", "Akon", "Travis", "Drake", "Hamdo", "Edo", "Alen", "Osman",
+    "Dzenis", "Ahmed"];
+// for (let el = 0; el < niz.length; el++){
+// niz[el] = niz[el] * niz[el];
+// }
+
+let nizz = niz.map(el => el * el);
+let nizf = niz.filter(i => i % 2 !== 0);
+let nizFf = niz.filter(i => i % 2 === 0);
+let nizSqrt = nizFf.map(s => Math.sqrt(s));
+let nizSqrtN = nizf.map(s => Math.sqrt(s));
+let namesS = names.filter(imena => imena.charAt(0) !== "A");
+console.log("Niz", niz, "Imena", names, "proizvod niza", nizz, "Neparni brojevi", nizf, "parni brojevi", nizFf, "koren parnih brojeva", nizSqrt,
+    "niz ne parnih brojeva", nizSqrtN, "filter imena", namesS);
