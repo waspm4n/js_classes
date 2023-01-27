@@ -236,18 +236,45 @@ return prev + curr / arr.length;
 console.log("niz",arr,"duzina niza",arr.length,"suma niza",sum)
 console.log(srednjaVrednost); 
 */
-let niz = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,20,30,35,40,45,50,52,54,56,58,60,61,63,65,67,69,70,75,80,82,84,86,88,90,91,93,95,97,99,100];
-let names = ["Wick", "Luffy", "Sparrow", "Morgan", "James", "Future", "Akon", "Travis", "Drake", "Hamdo", "Edo", "Alen", "Osman",
-    "Dzenis", "Ahmed"];
+
 // for (let el = 0; el < niz.length; el++){
 // niz[el] = niz[el] * niz[el];
 // }
-
+let niz = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20,
+    30, 35, 40, 45, 50, 52, 54, 56, 58, 60, 61, 63,
+    65, 67, 69, 70, 75, 80, 82, 84, 86, 88, 90, 91, 93, 95, 97, 99, 100];
+let names = ["Wick", "Luffy", "Sparrow", "Morgan", "James",
+    "Future", "Akon", "Travis", "Drake", "Hamdo", "Edo", "Alen", "Osman",
+    "Dzenis", "Ahmed"];
+    
 let nizz = niz.map(el => el * el);
-let nizf = niz.filter(i => i % 2 !== 0);
-let nizFf = niz.filter(i => i % 2 === 0);
-let nizSqrt = nizFf.map(s => Math.sqrt(s));
-let nizSqrtN = nizf.map(s => Math.sqrt(s));
+let nizMapSuma = niz.map(el => el + el);
+let nizNeparni = niz.filter(i => i % 2 !== 0);
+let nizParni = niz.filter(i => i % 2 === 0);
+let nizSqrt = nizParni.map(s => Math.sqrt(s));
+let nizSqrtN = nizNeparni.map(s => Math.sqrt(s));
 let namesS = names.filter(imena => imena.charAt(0) !== "A");
-console.log("Niz", niz, "Imena", names, "proizvod niza", nizz, "Neparni brojevi", nizf, "parni brojevi", nizFf, "koren parnih brojeva", nizSqrt,
-    "niz ne parnih brojeva", nizSqrtN, "filter imena", namesS);
+
+
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+    30, 35, 40, 45, 50, 52, 54, 56, 58, 60, 61, 63,
+    65, 67, 69, 70, 75, 80, 82, 84, 86, 88, 90, 91, 93, 95, 97, 99, 100];
+let arrSum = arr.reduce((a, b) => (a+b), 0);
+let arrDiv = arr.reduce((a, b) => (a + b), 0) / arr.length;
+let arrMax = arr.reduce((a, b) => { if (a === 0 || a < b) return b; }, 0);
+let arrMin = arr.reduce((a, b) => { if (a === 0 || a > b) return b; else return a; }, 0);
+const nizSaNizovima = [1, 2, [3, 4, 5], [6, 7], 8, [9, 10]];
+let nizBezNiza = nizSaNizovima.reduce((a, b) => a.concat(b),[]);
+
+console.log("Prvi niz", niz, "Niz imena", names, "Drugi niz", arr);
+console.log("Proizvod map niza", nizz, "Suma map niza", nizMapSuma);
+console.log("Filter neparnih brojeva", nizNeparni, "Filter parnih brojeva", nizParni);
+console.log("Koren parnih", nizSqrt, "Koren neparnih", nizSqrtN);
+console.log("Reduce suma niza", arrSum);
+console.log("Srednja vrednost niza", arrDiv);
+console.log("Max vrednost niza", arrMax);
+console.log("Min vrednost niza", arrMin);
+console.log("Filter imena ", namesS);
+console.log(nizSaNizovima);
+console.log(nizBezNiza);
