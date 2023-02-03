@@ -1,0 +1,173 @@
+var studenti = [
+  {
+    name: "Ronald",
+    lastName: "MekDonald",
+    nickName: "Mac",
+    predmeti: [
+      "Matematika",
+      "Fizika",
+      "Otpornost materijala",
+      "Mehanika",
+      "Termodinamika",
+      "Robotika",
+      "Masinski materijali",
+    ],
+    ocene: [8, 9, 7, 6, 7, 10, 10],
+    departman: "Paddies Pub",
+  },
+  {
+    name: "Tony",
+    lastName: "Soprano",
+    predmeti: [
+      "Strategija",
+      "Relacije",
+      "Biznis",
+      "Psihologija",
+      "Ljudsko ponasanje",
+    ],
+    ocene: [9, 9, 10, 10, 6],
+    departman: "Waste management",
+  },
+  {
+    name: "Christopher",
+    lastName: "Moltisanti",
+    predmeti: [
+      "Odvikavanje",
+      "H",
+      "Prodavanje tudje imovine",
+      "Karizma",
+      "Lojalnost",
+      "Manipulisanje berzom",
+      "Rad sa oruzjem",
+    ],
+    ocene: [6, 8, 10, 10, 10, 10, 10],
+    departman: "Waste management",
+  },
+  {
+    name: "Paulie",
+    lastName: "Gualtieri",
+    nickName: "Walnuts",
+    predmeti: [
+      "Moving H",
+      "Prodavanje tudje imovine",
+      "Karizma",
+      "Lojalnost",
+      "Manipulisanje berzom",
+      "Rad sa oruzjem",
+      "Slikarstvo",
+      "Komedija",
+    ],
+    ocene: [8, 10, 8.5, 7, 6, 10, 10, 10],
+    departman: "Waste management",
+  },
+  {
+    name: "Johnny",
+    lastName: "Sacramoni",
+    nickName: "Sack",
+    predmeti: [
+      "Urbanizam",
+      "Prodavanje tudje imovine",
+      "Karizma",
+      "Lojalnost",
+      "Manipulisanje berzom",
+      "Rad sa oruzjem",
+      "Familijarne veze",
+      "Drip",
+    ],
+    ocene: [10, 6, 9, 9, 6, 10, 10, 10],
+    departman: "Waste management",
+  },
+  {
+    name: "Raymond",
+    lastName: "Reddington",
+    nickName: "Red",
+    predmeti: [
+      "Marinstvo",
+      "Internacionalna trgovina",
+      "Knjizevnost",
+      "Zakonovodstvo",
+      "Ekonomija",
+      "Jezici",
+      "Gurmanstvo",
+      "Crna Lista",
+    ],
+    ocene: [9, 10, 10, 10, 10, 10, 10, 10],
+    departman: "Konsijerz kriminala",
+  },
+  {
+    name: "Frenk",
+    lastName: "Rejnolds",
+    nickName: "I gotta a guy",
+    predmeti: [
+      "Vijetnam",
+      "Radionice",
+      "CEO",
+      "Rvanje",
+      "Porez",
+      "Finanser",
+      "Mesarstvo",
+    ],
+    ocene: [10, 8, 8, 10, 6, 10, 6],
+    departman: "Paddys Pub",
+  },
+  {
+    name: "Denis",
+    lastName: "Rejnolds",
+    nickName: "Golden",
+    predmeti: [
+      "Konobar",
+      "Model",
+      "Vezivanje",
+      "Interijer",
+      "Govornik",
+      "Psiholog",
+    ],
+    ocene: [6, 7, 10, 6, 10, 10],
+    departman: "D.E.N.N.I.S System, Paddies Pub",
+  },
+  {
+    name: "Dee",
+    lastName: "Rejnolds",
+    nickName: "Sweet Dee or Bird",
+    predmeti: [
+      "Konobar",
+      "Model",
+      "Gluma",
+      "Akcentovanje",
+      "Komedija",
+      "Improvizacija",
+    ],
+    ocene: [6, 8, 10, 10, 10, 10],
+    departman: "Paddies Pub",
+  },
+  {
+    name: "Carli",
+    lastName: "Keli",
+    nickName: "",
+    predmeti: [
+      "Bird law",
+      "Carli work",
+      "Vodoinstalter",
+      "Genije",
+      "Inspekcija kanalizacije i mostova",
+      "Teorija evolucija",
+    ],
+    ocene: [10, 6, 6, 10, 10, 6],
+    departman: "Paddies Pub",
+  },
+];
+let prosecneOcene = studenti.map((student) => ({
+  prosecnaOcena:
+    student.ocene.reduce((a, b) => a + b, 0) / student.ocene.length,
+  ...student,
+}));
+const topStudent = studenti
+  .map((student) => ({
+    prosecnaOcena:
+      student.ocene.reduce((a, b) => a + b, 0) / student.ocene.length,
+    ...student,
+  }))
+  .filter((a, b) => a.prosecnaOcena >= 8.5);
+console.log("Ucenici", studenti);
+console.log("Prosecne ocene ucenika", prosecneOcene);
+console.log("Stipendisti", topStudent);
