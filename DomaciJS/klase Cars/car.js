@@ -21,7 +21,7 @@ class Car {
   
     checkSpeed() {
       if (this.speed > this.maxSpeed) {
-        console.warn("Warning: You have exceeded the maximum speed limit.");
+        console.warn("Upozorenje prekoracili ste maximalnu brzinu");
       }
     }
   
@@ -30,38 +30,47 @@ class Car {
       this.checkSpeed();
     }
   
-    accelerate(amount) {
-      this.speed += amount;
+    ubrzanje(gas) {
+      this.speed += gas;
       this.checkSpeed();
     }
   
-    brake(amount) {
-      this.speed -= amount;
+    usporenje(gas) {
+      this.speed -= gas;
       if (this.speed < 0) {
         this.speed = 0;
       }
     }
   
-    status() {
+    provera() {
       if (this.engineOn = false) {
-        console.log("The car is not running.");
+        console.log("Motor je iskljucen");
       } else if (this.speed === 0) {
-        console.log("The car is idle.");
+        console.log("Auto je u neutralnom stanju");
       } else if (this.speed > 0) {
         if (this.speed < this.speed) {
-          console.log("The car is braking.");
+          console.log("Auto koci");
         } else {
-          console.log("The car is accelerating.");
+          console.log("Auto ubrzava");
         }
       }
     }
   }
   
-  const car = new Car("Mustang", 450, 120);
+const car = new Car("Mustang", 450, 120);
+console.log(car);
   console.log(car.speed);
   car.startEngine();
-  car.accelerate(30);
-  car.status(); 
-  car.brake(50);
-  car.status(); 
-  
+  car.ubrzanje(10);
+  car.provera(); 
+  car.usporenje();
+car.provera(); 
+
+
+const newCar = new Car("Hennessey Venom F5", "V8", 485);
+console.log(newCar);
+newCar.ubrzanje(50);
+newCar.stopEngine();
+newCar.provera();
+newCar.usporenje(50);
+newCar.provera();
